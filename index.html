@@ -116,6 +116,22 @@
   transition: opacity 0.3s ease;
   opacity: 0;
 }
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
   </style>
 </head>
 <body>
@@ -126,10 +142,15 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <header id="home">
-    <h1>Douglas Ribeiro Sanguino</h1>
-    <p>Desenvolvedor Mobile • Gestão e Infraestrutura de TI</p>
-  </header>
+ <header id="home">
+  <div class="profile-header">
+    <img src="https://github.com/DouglasRibeiroSanguino/portfolio/blob/main/dg.jpg" alt="Douglas" />
+    <div>
+      <h1>Douglas Ribeiro Sanguino</h1>
+      <p>Desenvolvedor Mobile • Gestão e Infraestrutura de TI</p>
+    </div>
+  </div>
+</header>
 
   <section id="projetos">
     <h2>Projetos</h2>
