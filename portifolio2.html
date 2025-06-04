@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Moderno - Douglas</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #005fa3;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #222;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    header nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 6rem 2rem 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #0077cc;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Sobre */
+    #sobre p {
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Projetos */
+    #projetos .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+    .card h3 {
+      margin-bottom: 0.8rem;
+      color: #0077cc;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .card a.button {
+      background: #0077cc;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .card a.button:hover {
+      background: #005fa3;
+    }
+
+    /* Contato */
+    #contato form {
+      max-width: 500px;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    }
+    #contato label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #333;
+    }
+    #contato input,
+    #contato textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+    #contato button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #contato button:hover {
+      background: #005fa3;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: #222;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Responsividade simples */
+    @media (max-width: 600px) {
+      header nav a {
+        margin-left: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Douglas</strong></div>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou Desenvolvedor Mobile e Web com experiência em criar soluções que unem tecnologia e usabilidade. Trabalho com foco em entregar resultados de qualidade, aplicando boas práticas e design centrado no usuário.</p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>App Controle de Estoque</h3>
+        <p>Aplicativo Android para controle de produtos com upload de imagens e backup em nuvem.</p>
+        <a href="https://play.google.com/store/apps/developer?id=Douglas+R.+S.+Developer" target="_blank" class="button" rel="noopener">Ver na Play Store</a>
+      </article>
+      <article class="card">
+        <h3>Portfolio Web</h3>
+        <p>Site pessoal para mostrar projetos, habilidades e experiência profissional.</p>
+        <a href="https://douglasribeirosanguino.github.io/portfolio/" target="_blank" class="button" rel="noopener">Visitar site</a>
+      </article>
+      <article class="card">
+        <h3>Projeto Node.js + Kotlin</h3>
+        <p>Mini sistema com backend Node.js e app Android consumindo API via Retrofit.</p>
+        <a href="#" class="button" rel="noopener">Em breve</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form onsubmit="alert('Mensagem enviada! Obrigado pelo contato.'); return false;">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Douglas Ribeiro. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
