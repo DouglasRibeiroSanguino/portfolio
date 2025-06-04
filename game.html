@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Adivinhação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #1e293b;
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+      max-width: 400px;
+      width: 100%;
+      margin-top: 5rem;
+    }
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+    input[type="number"] {
+      padding: 0.6rem;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    button {
+      background: #38bdf8;
+      border: none;
+      color: #0f172a;
+      padding: 0.7rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0ea5e9;
+    }
+    #mensagem {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adivinhe o número entre 1 e 10</h1>
+    <input type="number" id="palpite" min="1" max="10" placeholder="Digite um número...">
+    <button onclick="verificarPalpite()">Tentar</button>
+    <p id="mensagem"></p>
+    <button id="resetBtn" style="display:none; margin-top: 1rem;" onclick="resetGame()">Jogar Novamente</button>
+  </div>
+
+  <footer>
+    © 2025 Douglas Ribeiro Sanguino • Projeto de exemplo com HTML, CSS e JS
+  </footer>
+
+  <script>
+    let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+    let tentativas = 0;
+
+    function verificarPalpite() {
+      const entrada = document.getElementById('palpite').value;
+      const resultado = document.getElementById('mensagem');
+      const resetBtn = document.getElementById('resetBtn');
+      tentativas++;
+
+      if (!entrada || entrada < 1 || entrada > 10) {
+        resultado.textContent = 'Por favor, digite um número entre 1 e 10.';
+        resultado.style.color = '#f87171';
+        return;
+      }
+
+      if (entrada == numeroSecreto) {
+        resultado.textContent = `🎉 Parabéns! Você acertou em ${tentativas} tentativa(s)!`;
+        resultado.style.color = '#22c55e';
+        resetBtn.style.display = 'block';
+      } else if (entrada < numeroSecreto) {
+        resultado.textContent = '🔼 Tente um número maior.';
+        resultado.style.color = '#facc15';
+      } else {
+        resultado.textContent = '🔽 Tente um número menor.';
+        resultado.style.color = '#facc15';
+      }
+    }
+
+    function resetGame() {
+      numeroSecreto = Math.floor(Math.random() * 10) + 1;
+      tentativas = 0;
+      document.getElementById('palpite').value = '';
+      document.getElementById('mensagem').textContent = '';
+      document.getElementById('resetBtn').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
